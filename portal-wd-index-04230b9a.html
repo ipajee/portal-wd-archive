@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>资讯索引 · 问鼎娱乐</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f3ee;
+      font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+      color: #2e2c29;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .page-wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      background: #fefcf9;
+      border-radius: 28px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      padding: 2.8rem 2.2rem;
+    }
+
+    /* hero 区 */
+    .hero {
+      margin-bottom: 3rem;
+      text-align: left;
+      border-bottom: 1px solid #e8e0d6;
+      padding-bottom: 1.8rem;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 450;
+      letter-spacing: -0.02em;
+      color: #1f1c17;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #5f5950;
+      max-width: 70%;
+    }
+
+    /* 优势区 —— 卡片风格 */
+    .advantage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6rem;
+      margin: 2.6rem 0;
+    }
+
+    .adv-card {
+      background: #faf7f2;
+      padding: 1.6rem 1.4rem;
+      border-radius: 18px;
+      border-left: 4px solid #b8a48b;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    .adv-card h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: #2a2520;
+    }
+
+    .adv-card p {
+      font-size: 0.95rem;
+      color: #4d4740;
+    }
+
+    /* 说明区 —— 引用块 */
+    .explain-block {
+      background: #f4efe9;
+      padding: 1.8rem 2rem;
+      border-radius: 20px;
+      margin: 2.8rem 0;
+      position: relative;
+    }
+
+    .explain-block::before {
+      content: "📋";
+      position: absolute;
+      left: -0.8rem;
+      top: -0.8rem;
+      font-size: 1.8rem;
+      background: #f7f3ee;
+      padding: 0 0.3rem;
+    }
+
+    .explain-block p {
+      font-size: 1.02rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .explain-block cite {
+      display: block;
+      text-align: right;
+      font-style: normal;
+      color: #776e62;
+      margin-top: 0.6rem;
+      font-size: 0.9rem;
+    }
+
+    /* FAQ 摘要 */
+    .faq-summary {
+      margin: 2.4rem 0;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.5rem;
+      font-weight: 440;
+      border-left: 5px solid #bfad96;
+      padding-left: 1rem;
+      margin-bottom: 1.2rem;
+      color: #2b2621;
+    }
+
+    .faq-item {
+      margin-bottom: 0.9rem;
+      border-bottom: 1px dashed #ddd6cd;
+      padding-bottom: 0.8rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      color: #3b352e;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item span {
+      font-size: 0.95rem;
+      color: #5c554b;
+    }
+
+    .faq-more {
+      margin-top: 1.4rem;
+      text-align: right;
+    }
+
+    .faq-more a {
+      color: #7a6b5b;
+      text-decoration: none;
+      border-bottom: 1px dotted #bfad96;
+      font-size: 0.95rem;
+    }
+
+    .faq-more a:hover {
+      color: #3d342b;
+    }
+
+    /* 底部链接 */
+    .footer-links {
+      margin-top: 3.2rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid #e3dad0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+      color: #5f5549;
+    }
+
+    .footer-links .note {
+      max-width: 60%;
+    }
+
+    .footer-links a {
+      color: #7d6f5e;
+      text-decoration: none;
+      border-bottom: 1px solid #d4c8ba;
+    }
+
+    .footer-links a:hover {
+      color: #2f2923;
+      border-color: #7d6f5e;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      .page-wrap {
+        padding: 1.8rem 1rem;
+      }
+      .hero p {
+        max-width: 100%;
+      }
+      .advantage-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .footer-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+      }
+      .footer-links .note {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- hero -->
+  <div class="hero">
+    <h1>资料整理 · 问鼎娱乐</h1>
+    <p>把零散的信息收拢成可靠的索引，再从中找到自己需要的那个角落。</p>
+  </div>
+
+  <!-- 优势区 -->
+  <div class="advantage-grid">
+    <div class="adv-card">
+      <h3>信息归档</h3>
+      <p>归类、打标签、做摘要，帮你在碎片里快速定位。平时随手记下的玩法、版本、通知，现在有条理了。</p>
+    </div>
+    <div class="adv-card">
+      <h3>场景导览</h3>
+      <p>不管是休闲时翻翻，还是需要某个具体资料，都能顺着索引摸到。省掉反复查找的折腾。</p>
+    </div>
+    <div class="adv-card">
+      <h3>轻量化入口</h3>
+      <p>不堆砌、不刷屏，只把真正有用的链接和说明放出来。页面干净，读起来不累。</p>
+    </div>
+    <div class="adv-card">
+      <h3>持续更新</h3>
+      <p>记录会随着内容库一起迭代。旧版本保留备注，新变动第一时间添加说明。</p>
+    </div>
+  </div>
+
+  <!-- 说明区 (引用块) -->
+  <div class="explain-block">
+    <p>“我总在找某个规则或活动说明时翻好几个页面，后来干脆自己用文档梳理了一遍。这个索引页就是从那堆笔记里长出来的——把最常用的信息聚到一起，也留出扩展的接口。”</p>
+    <cite>—— 一位资料整理者的习惯</cite>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-summary">
+    <h2>常见疑问摘要</h2>
+    <div class="faq-item">
+      <strong>这里的索引范围包括哪些？</strong>
+      <span>主要覆盖平台的基础说明、功能模块指向和日常使用中容易忽略的细节。不涉及非公开或敏感内容。</span>
+    </div>
+    <div class="faq-item">
+      <strong>信息多久更新一次？</strong>
+      <span>视变动情况而定，通常每周做一次小范围核对。重大调整会尽快补充到索引里。</span>
+    </div>
+    <div class="faq-item">
+      <strong>可以直接从这里跳转到目标页面吗？</strong>
+      <span>索引提供整理后的概要，具体页面入口会附在相应说明旁。例如你可以在<a href="https://portal-wd.com">问鼎娱乐</a>找到对应的详细内容。</span>
+    </div>
+    <div class="faq-more">
+      <a href="#">查看完整 FAQ →</a>
+    </div>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="footer-links">
+    <div class="note">
+      📌 本页为资料索引页，内容仅供参考。具体信息以对应平台实时页面为准。
+    </div>
+    <div>
+      <a href="https://portal-wd.com">问鼎娱乐</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
