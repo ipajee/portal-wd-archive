@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷速 · 资料整理与信息索引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Georgia', 'Noto Serif SC', 'Times New Roman', serif;
+            background-color: #f9f6f2;
+            color: #2e2a24;
+            line-height: 1.7;
+        }
+        .hero {
+            background: #1b1a18;
+            background-image: radial-gradient(circle at 20% 40%, #2f2c27 1%, #141312 80%);
+            min-height: 45vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: #e5e0d9;
+            border-bottom: 1px solid #3b3732;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 0.75rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+        }
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 640px;
+            color: #b8aea3;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 3.5rem 1.8rem 4rem;
+        }
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 400;
+            border-left: 4px solid #b28b5c;
+            padding-left: 1rem;
+            margin-bottom: 1.8rem;
+            color: #2c2823;
+        }
+        .intro-text {
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+            color: #3b3530;
+        }
+        .intro-text a {
+            color: #91754e;
+            text-decoration-color: #c3a77b;
+            text-underline-offset: 3px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .intro-text a:hover {
+            color: #6e573b;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem 2.5rem;
+            margin: 2.8rem 0 3rem;
+        }
+        .feature-item {
+            background: #ffffff;
+            padding: 1.6rem 1.8rem 1.8rem;
+            border-radius: 14px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.03), 0 1px 4px rgba(0,0,0,0.06);
+            border: 1px solid #ece7e0;
+            transition: box-shadow 0.2s;
+        }
+        .feature-item:hover {
+            box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+        }
+        .feature-icon {
+            font-size: 1.7rem;
+            margin-bottom: 0.2rem;
+            display: block;
+        }
+        .feature-item h3 {
+            font-size: 1.18rem;
+            font-weight: 500;
+            margin: 0.4rem 0 0.6rem;
+            letter-spacing: 0.5px;
+            color: #2e2923;
+        }
+        .feature-item p {
+            font-size: 0.97rem;
+            color: #55504a;
+            line-height: 1.6;
+        }
+        .feature-item p a {
+            color: #91754e;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color 0.2s;
+        }
+        .feature-item p a:hover {
+            color: #6f583c;
+        }
+        .quote-block {
+            background: #ede7de;
+            padding: 2.2rem 2.5rem;
+            border-radius: 20px;
+            margin: 3rem 0 2rem;
+            font-size: 1rem;
+            border-left: 6px solid #b28b5c;
+        }
+        .quote-block p {
+            margin-bottom: 1.2rem;
+            color: #3d3730;
+        }
+        .quote-block p:last-child {
+            margin-bottom: 0;
+        }
+        .faq-note {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 2rem;
+            background: #ffffff;
+            padding: 2rem 2.2rem;
+            border-radius: 18px;
+            border: 1px solid #e5dfd6;
+            margin-top: 2.5rem;
+        }
+        .faq-note dt {
+            font-weight: 600;
+            color: #2f2a24;
+            margin-bottom: 0.1rem;
+            font-size: 1rem;
+        }
+        .faq-note dd {
+            color: #5a534b;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        .faq-note dd a {
+            color: #91754e;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        .closing {
+            margin-top: 3.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #dbd2c7;
+            font-size: 1rem;
+            color: #5b544b;
+            text-align: center;
+        }
+        .closing a {
+            color: #7d684b;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        @media (max-width: 680px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .container {
+                padding: 2.5rem 1.4rem 3rem;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
+            .quote-block {
+                padding: 1.6rem 1.5rem;
+            }
+            .faq-note {
+                padding: 1.5rem;
+            }
+        }
+        @media (max-width: 420px) {
+            .hero {
+                min-height: 35vh;
+                padding: 2.5rem 1rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>资料整理·信息索引</h1>
+        <p>从文档到脉络，让每一次检索都有迹可循</p>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title">由一篇笔记开始</h2>
+        <div class="intro-text">
+            <p>早些年整理技术笔记时，发现最耗时的往往不是理解概念，而是追踪碎片里互相矛盾的出处。后来逐渐养成习惯：每收集一条信息，先问它来自哪里、属于哪一类、和哪些上下文关联。这个朴素的整理方法慢慢沉淀下来，也成了理解 <a href="https://cnleisu.com">雷速</a> 的起点——一个把资料索引当作核心工作流的站点。</p>
+            <p>它不追逐热点，也不堆砌搬运，而是用分类和关联让信息自己开口。对常做研究或内容梳理的人来说，这种克制本身就很珍贵。</p>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 0.8rem;">索引的四个侧面</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <span class="feature-icon">📂</span>
+                <h3>分类与标签</h3>
+                <p>按主题、来源、时间三个维度组织条目，避免信息混装。每条记录都带有可追溯的标记，便于后续筛选和重组。即使面对大量素材，也能快速定位关键段落。</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🔗</span>
+                <h3>可读的交叉引用</h3>
+                <p>相似的见解、相悖的结论，用引用线自然串联。不打断阅读流程，却能在需要时展开完整上下文。这种结构尤其适合长期积累的专题笔记或文献整理。</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">📝</span>
+                <h3>轻量的记录风格</h3>
+                <p>不追求长篇大论，每一条索引都像便签般精炼。标题、摘要、一个链接、两句评注——已足够承载核心信息。真正重要的是条目之间的关联，而非条目本身的长度。</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">⚙️</span>
+                <h3>低摩擦更新</h3>
+                <p>索引的价值在于持续维护。通过简单的编辑入口和一致的数据格式，添加或修正一条信息不会打乱整体秩序。你甚至可以把 <a href="https://cnleisu.com">雷速</a> 当作一个不断生长的个人知识地图。</p>
+            </div>
+        </div>
+
+        <div class="quote-block">
+            <p><strong>一个常见误解</strong>：索引就是目录，把标题列出来就够了。其实好的索引更像是你与信息之间的对话——它知道什么内容值得被记住，也清楚哪些地方需要更细致的分层。在雷速的实践中，每一则条目都经过筛选和定位，而不是简单摘抄。</p>
+            <p><strong>适合的场景</strong>：当你面对几十个书签、上百份文档却感觉无从下手时；当你需要向团队快速交付某个主题的脉络，而不只是零散链接时；当你想重新梳理自己的研究笔记，让它们不再沉睡在文件夹里时——这类资料索引的思路往往比想象中更有效。</p>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 2rem;">常见疑问摘要</h2>
+        <dl class="faq-note">
+            <dt>❔ 索引条目会包含原始内容吗？</dt>
+            <dd>通常只保留摘要和关键出处，完整文章仍指向原始地址。这样既尊重版权，也避免信息失真。具体做法可参考 <a href="https://cnleisu.com">雷速</a> 上对引用的处理方式。</dd>
+            <dt style="margin-top: 1rem;">❔ 适合个人使用还是团队协作？</dt>
+            <dd>两者皆可。索引本身是轻量结构，单人维护时灵活，多人使用时只需约定标签和引用格式。雷速的公开部分展示了个人层面的整理成果，而内部扩展可以视需要增加协作者字段。</dd>
+            <dt style="margin-top: 1rem;">❔ 会不会增加信息过载？</dt>
+            <dd>恰恰相反。索引强迫你为每条信息做一次判断：它值得被收录吗？属于哪个类别？这种主动筛选反而减掉大量噪音。当你习惯用索引思维接触新内容时，吸收效率会明显提升。</dd>
+        </dl>
+
+        <div class="closing">
+            <p>索引不是终点，它是帮你找到下一块拼图的坐标。如果你也在搭建自己的信息树，不妨从一次简单的条目整理开始。</p>
+            <p style="margin-top: 1rem;">进一步了解  <a href="https://cnleisu.com">雷速</a> 的索引思路与分类实践。</p>
+        </div>
+    </main>
+</body>
+</html>
